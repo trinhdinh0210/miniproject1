@@ -32,7 +32,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/edit", method = RequestMethod.GET)
-    public String editUser(@RequestParam("id") Integer userId, Model model) {
+    public String editUser(@RequestParam("id") String userId, Model model) {
         Optional<User> userEdit = userService.findUserById(userId);
         userEdit.ifPresent(user -> model.addAttribute("user", user));
         return "editUser";
@@ -45,8 +45,10 @@ public class UserController {
     }
 
     @RequestMapping(value = "/delete", method = RequestMethod.GET)
-    public String deleteUser(@RequestParam("id") Integer userId, Model model) {
+    public String deleteUser(@RequestParam("id") String userId, Model model) {
         userService.deleteUser(userId);
         return "redirect:/";
     }
+
+
 }

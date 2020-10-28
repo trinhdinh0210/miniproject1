@@ -10,7 +10,7 @@ public interface UserService {
 
     void saveUser(User user);
 
-    void deleteUser(Integer id);
+    void deleteUser(String id);
 
-    Optional<User> findUserById(Integer id);
+    Optional<User> findUserById(String id);
 }

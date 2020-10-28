@@ -11,12 +11,7 @@
     <h1>New User</h1>
     <div class="col-md-auto">
         <form th:object="${user}" th:action="@{save}" action="#" method="post">
-            <div>
-                <label th:text="Id" th:for="id"></label>
-                <input type="text" th:field="*{id}" class="form-control" placeholder="Id"/>
-            </div>
-            
-            <div style="clear: both; display: block; height: 10px"></div>
+
             <div>
                 <label th:text="Name" th:for="name"></label>
                 <input type="text" th:field="*{name}" class="form-control" placeholder="Name"/>

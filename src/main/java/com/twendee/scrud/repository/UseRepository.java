@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.twendee.scrud.entity.User;
 
 @Repository
-public interface UseRepository extends CrudRepository<User, Integer> {
+public interface UseRepository extends CrudRepository<User, String> {
 
 }
