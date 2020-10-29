@@ -1,0 +1,13 @@
+{
+  "properties": [
+    {
+      "name": "xml",
+      "type": "java.lang.String",
+      "description": "Description for xml."
+    },
+    {
+      "name": "xml",
+      "type": "java.lang.String",
+      "description": "Description for xml."
+    }
+  ] }
