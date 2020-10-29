@@ -8,16 +8,17 @@ import org.springframework.context.annotation.FilterType;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
-import com.twendee.scrud.repository.UseRepository;
+import com.twendee.scrud.repository.UserRepository;
 
-@EnableMongoRepositories(basePackageClasses = UseRepository.class)
-@EnableJpaRepositories(excludeFilters = 
- @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, value = UseRepository.class))
-	@SpringBootApplication(exclude = { DataSourceAutoConfiguration.class })
+
+@EnableMongoRepositories(basePackageClasses = UserRepository.class)
+@EnableJpaRepositories(repositoryFactoryBeanClass=UserRepository.class,excludeFilters = 
+  @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, value = UserRepository.class))
+@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class })
 public class ScrudApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(ScrudApplication.class, args);
-    }
+	public static void main(String[] args) {
+		SpringApplication.run(ScrudApplication.class, args);
+	}
 
 }
