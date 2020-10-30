@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.twendee.scrud.entity.User;
@@ -23,6 +24,7 @@ public interface UserService {
     
     List<User> findPaginated(int pageNo, int pageSize);
     
-    List<User> search(String p);
+    Page<User> findUserByName(Pageable pageable, String name);
+
     
 }

@@ -9,16 +9,21 @@
 </head>
 <body>
 	<div class="col-3"></div>
+	<h1><a href="/"> Manage User</a></h1>
 	<div class="container col-6">
 		<h1>New User</h1>
 		<div class="col-md-auto">
 			<form th:object="${user}" th:action="@{save}" action="#"
-				method="post">
+				method="post" enctype="multipart/form-data">
+				<input type="file" name="image" accept="image/*" />
+				
 
 				<div>
 					<label th:text="Name" th:for="name"></label> <input type="text"
 						th:field="*{name}" class="form-control" placeholder="Name" />
 					<div style="clear: both; display: block; height: 10px"></div>
+					
+					
 
 					<label th:text="Birthday" th:for="birthday"></label> <input
 						type="date" th:field="*{birthday}" class="form-control" />

@@ -52,8 +52,12 @@ public class UserServiceImpl implements UserService {
     }
 
 	@Override
-	public List<User> search(String p) {
-		return userRepository.findByNameContaining(p);
+	public Page<User> findUserByName(Pageable pageable, String name) {
+		return userRepository.findAllByNameContaining(pageable, name);
 	}
+
+	
+
+	
 
 }
